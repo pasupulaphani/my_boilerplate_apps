@@ -1,4 +1,4 @@
-boilerplate_appfog_nodejs
+boilerplate_apps
 =========================
 
-boilerplate nodejs app for appfog
+gathering my ready to bootstrap apps
