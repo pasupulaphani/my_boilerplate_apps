@@ -1,0 +1,83 @@
+
+<p>
+  <b>Title:</b>
+  <%= @snapshot.title %>
+</p>
+
+<p>
+  <b>Publication date:</b>
+  <%= @snapshot.publication_date %>
+</p>
+
+<p>
+  <b>Disporder:</b>
+  <%= @snapshot.disporder %>
+</p>
+
+<p>
+  <b>Displayed:</b>
+  <%= @snapshot.displayed %>
+</p>
+
+<p>
+  <b>Authors:</b>
+  <%= @snapshot.authors %>
+</p>
+
+<p>
+  <b>Abstract:</b>
+  <%= @snapshot.abstract %>
+</p>
+
+<p>
+  <b>Popularity:</b>
+  <%= @snapshot.popularity %>
+</p>
+
+<p>
+  <b>Download count:</b>
+  <%= @snapshot.download_count %>
+</p>
+
+<p>
+<b>Under Topics:</b>
+<ul>
+  <% for topicization in @snapshot.topicizations %>
+    <li>Topic : <%=h topicization.topic.name %></li>
+  <% end %>
+</ul>
+</p>
+
+<p>
+  <b>Thumb image:</b>
+  <%= image_tag(@snapshot.thumb_image, :width => "150px") if @snapshot.thumb_image? %>
+</p>
+
+<p>
+  <b>Cover image:</b>
+  <%= image_tag(@snapshot.cover_image, :width => "150px") if @snapshot.cover_image? %>
+</p>
+
+<p>
+  <b>Full image1:</b>
+  <%= image_tag(@snapshot.full_image1, :width => "150px") if @snapshot.full_image1? %>
+</p>
+
+<p>
+  <b>Full image2:</b>
+  <%= image_tag(@snapshot.full_image2, :width => "150px") if @snapshot.full_image2? %>
+</p>
+
+<p>
+  <b>Full image3:</b>
+  <%= image_tag(@snapshot.full_image3, :width => "150px") if @snapshot.full_image3? %>
+</p>
+
+<p>
+  <b>Full pdf:</b>
+  <%= @snapshot.full_pdf %>
+</p>
+
+
+<%= link_to 'Edit', edit_snapshot_path(@snapshot) %> |
+<%= link_to 'Back', snapshots_path %>

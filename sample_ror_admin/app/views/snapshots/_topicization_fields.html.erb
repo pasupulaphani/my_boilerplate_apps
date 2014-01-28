@@ -1,0 +1,8 @@
+<div class="fields row_t">
+  <table>
+    <tr>
+      <td><%= f.input :topic_id, :collection => Topic.all, :include_blank => false %></td>
+      <td><%= link_to_remove_fields "remove", f %></td>
+    </tr>
+  </table>
+</div>

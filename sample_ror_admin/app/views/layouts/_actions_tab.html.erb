@@ -1,0 +1,15 @@
+<ul class="nav nav-pills">
+  
+  <li <% if params[:controller] == "snapshots" && params[:action] == "index" && !params.has_key?(:topic) %> class="active" <% end %> >
+    <a href="/snapshots">All Snapshots</a>
+  </li>
+  <li <% if params[:controller] == "snapshots" && params[:action] == "new" %> class="active" <% end %> >
+    <%= link_to 'Add Snapshot', new_snapshot_path %>
+  </li>
+  <li <% if params[:controller] == "topics" && params[:action] == "index" %> class="active" <% end %> >
+    <a href="/topics">All Topics</a>
+  </li>
+  <li <% if params[:controller] == "topics" && params[:action] == "new" %> class="active" <% end %> >
+    <%= link_to 'Add Topic', new_topic_path %>
+  </li>
+</ul>

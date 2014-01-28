@@ -1,0 +1,100 @@
+
+<%= simple_form_for(@snapshot) do |f| %>
+  <% if @snapshot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@snapshot.errors.count, "error") %> prohibited this snapshot from being saved:</h2>
+
+      <ul>
+      <% @snapshot.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.input :title %>
+  <%= f.input :publication_date %>
+  <%= f.input :disporder %>
+  <%= f.input :displayed %>
+  <%= f.input :authors %>
+  <%= f.input :abstract, :input_html => {:cols => 40, :rows => 10, :style => "margin: 0px 0px 10px; width: 371px; height: 116px; "} %>
+  <%= f.input :popularity %>
+  <%= f.input :download_count %>
+  
+  <div class="field">
+    <label>Under Topics : </label>
+    <%= f.simple_fields_for :topicizations do |builder| %>
+      <%= render 'topicization_fields', :f => builder %>
+    <% end %>
+    <p><label></label><%= link_to_add_fields "Add Topic", f, :topicizations %></p>
+  </div><br />
+  
+  <table cellpadding="10px">
+    <tr>
+      <td>
+        <%= f.input :thumb_image, :as => :file, :input_html => {:onchange => "showPreview(this,'thumb_image');"} %>
+      </td>
+      <td>
+        <% if @snapshot.thumb_image? %>
+          <%= image_tag @snapshot.thumb_image, :id => "thumb_image", :width=>"150px" %>
+        <% else %>
+          <%= image_tag("no_img_160_120.gif", :id => "thumb_image", :alt => "uploaded image") %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <%= f.input :cover_image, :as => :file, :input_html => {:onchange => "showPreview(this,'cover_image');"} %>
+    </td>
+      <td>
+        <% if @snapshot.cover_image? %>
+          <%= image_tag @snapshot.cover_image, :id => "cover_image", :width=>"150px" %>
+        <% else %>
+          <%= image_tag("no_img_160_120.gif", :id => "cover_image", :alt => "uploaded image") %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.input :full_image1, :as => :file, :input_html => {:onchange => "showPreview(this,'full_image1');"}  %>
+      </td>
+      <td>
+        <% if @snapshot.full_image1? %>
+          <%= image_tag @snapshot.full_image1, :id => "full_image1", :width=>"150px" %>
+        <% else %>
+          <%= image_tag("no_img_160_120.gif", :id => "full_image1", :alt => "uploaded image") %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.input :full_image2, :as => :file, :input_html => {:onchange => "showPreview(this,'full_image2');"}  %>
+      </td>
+      <td>
+        <% if @snapshot.full_image2? %>
+          <%= image_tag @snapshot.full_image2, :id => "full_image2", :width=>"150px" %>
+        <% else %>
+          <%= image_tag("no_img_160_120.gif", :id => "full_image2", :alt => "uploaded image") %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.input :full_image3, :as => :file, :input_html => {:onchange => "showPreview(this,'full_image3');"}  %>
+      </td>
+      <td>
+        <% if @snapshot.full_image3? %>
+          <%= image_tag @snapshot.full_image3, :id => "full_image3", :width=>"150px" %>
+        <% else %>
+          <%= image_tag("no_img_160_120.gif", :id => "full_image3", :alt => "uploaded image") %>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+
+  <%= f.input :full_pdf, :as => :file %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

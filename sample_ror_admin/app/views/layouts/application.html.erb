@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SnapshotApp</title>
+  <%= stylesheet_link_tag    "application", 
+                              "bootstrap",
+                              "bootstrap-responsive" %>
+  <%= javascript_include_tag "application", "jquery", "jquery_ujs"%>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= render 'layouts/top_nav' %>
+
+  <% if user_signed_in? %>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      
+      <%= render 'layouts/left_nav', :collection => getTopics %>
+      
+      <div class="span9">
+        
+        <%= render 'layouts/actions_tab' %>
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+        
+      </div>
+      
+    </div>
+  </div>
+
+  <% else %>
+    <center>
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </center>
+  <% end %>
+
+</body>
+</html>

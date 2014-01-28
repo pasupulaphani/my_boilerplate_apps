@@ -1,0 +1,40 @@
+</style>
+
+<div class="row-fluid">
+  <ul class="thumbnails">
+    <% @snapshots.each do |snapshot| %>
+    <li class="span10" >
+      <div class="thumbnail img row_t">
+        <div class="cell_t" style="width:30%" >
+        <% if snapshot.thumb_image? %>
+          <%= link_to image_tag(snapshot.thumb_image), snapshot %>
+        <% else %>
+          <%= link_to image_tag('no_img_160_120.gif'), snapshot %>
+        <% end %>
+        <div class="desc"><%= snapshot.download_count %> Downloads</div>
+        </div>
+        <div class="caption cell_t"  >
+          <h3><%= snapshot.title %></h3> 
+          <p>Published on : <%= snapshot.publication_date %></p>
+          <p>Authors : <%= snapshot.authors %></p>
+          <p>Abstract : <%= snapshot.abstract %></p>
+          <p>
+            <ul class="nav nav-pills" style="float: right">
+              <li>
+                <%= link_to 'View', snapshot %>
+              </li>
+              <li>
+                <a href="<%= edit_snapshot_path(snapshot) %>" >Edit</a>
+              </li>
+              <li class="disabled">
+                <%= link_to 'Destroy', snapshot, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </li>
+  <% end %>
+  </ul>
+</div>
+
