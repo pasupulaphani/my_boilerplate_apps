@@ -1,11 +1,25 @@
 <!doctype html>
-<html>
+<html class="no-js" lang="en">
   <head>
     <title><%= @appname %></title>
-    <link rel="stylesheet" type="text/css" href="css/site.css">
-  </style>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/src/foundation.css" />
+    <link rel="stylesheet" href="css/src/app.css" />
+
+    <script src="js/src/vendor/modernizr.js"></script>
 </head>
+
 <body>
   <%= yield %>
 </body>
+
+<script src="js/src/vendor/jquery.js"></script>
+<script src="js/src/foundation.min.js"></script>
+<script>
+  $(document).foundation();
+</script>
+
 </html>
