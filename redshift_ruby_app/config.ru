@@ -218,7 +218,7 @@ pre {
 
 <section class='container'>
           <hgroup>
-            <h1>Welcome to your resume.phaninder.com</h1>
+            <h1>Welcome to resume.phaninder.com</h1>
           </hgroup>
 
 
@@ -226,6 +226,7 @@ pre {
           <section class='col-xs-12 col-sm-6 col-md-6'>
             <section>
               <h2>This is an experimental online cv</h2>
+              <h4>-> Integrating with Github api and linkedin api</h4>
                 <p>Under construction</p>
 
             </section>
