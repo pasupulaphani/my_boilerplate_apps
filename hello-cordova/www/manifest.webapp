@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "name": "Boilerplate cordova Open Web App",
+  "description": "Boilerplate cordova Open Web App",
+  "launch_path": "/index.html",
+  "icons": {
+    "16": "/img/logo.png",
+    "48": "/img/logo.png",
+    "128": "/img/logo.png"
+  },
+  "developer": {
+    "name": "phaninder pasupula",
+    "url": "http://phaninder.com/awesomeapp"
+  },
+  "locales": {
+    "es": {
+      "description": "Boilerplate cordova Open Web",
+      "developer": {
+        "url": "http://phaninder.com/awesomeapp"
+      }
+    },
+    "it": {
+      "description": "Boilerplate cordova Open Web App",
+      "developer": {
+        "url": "http://phaninder.com/awesomeapp"
+      }
+    }
+  },
+  "default_locale": "en"
+}
