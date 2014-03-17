@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "name": "Boilerplate Open Web App",
+  "description": "Boilerplate Open Web App",
+  "launch_path": "/index.html",
+  "icons": {
+    "16": "/app-icons/icon-16.png",
+    "48": "/app-icons/icon-48.png",
+    "128": "/app-icons/icon-128.png"
+  },
+  "developer": {
+    "name": "phaninder pasupula",
+    "url": "http://phaninder.com/awesomeapp"
+  },
+  "locales": {
+    "es": {
+      "description": "Boilerplate Open Web",
+      "developer": {
+        "url": "http://phaninder.com/awesomeapp"
+      }
+    },
+    "it": {
+      "description": "Boilerplate Open Web App",
+      "developer": {
+        "url": "http://phaninder.com/awesomeapp"
+      }
+    }
+  },
+  "default_locale": "en"
+}
